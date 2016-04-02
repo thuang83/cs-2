@@ -2,147 +2,85 @@
 <html>
 
 <head>
-<style>
-#header {
-    background-color:#3b5998;
-    color:white;
-    text-align:center;
-    padding:5px;
-    font-family: Tahoma
-}
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height:500px;
-    width:400px;
-    float:left;
-    padding:5px;        
-}
-#section {
-    width:350px;
-    float:left;
-    padding:10px;    
-}
-#footer {
-    background-color:black;
-    color:white;
-    clear:both;
-    text-align:center;
-   padding:5px;    
-}
-</style>
+  <style>
+    #header {
+      background-color:#3b5998;
+      color:white;
+      text-align:center;
+      padding:5px;
+      font-family: Tahoma
+    }
+    #nav {
+      line-height:30px;
+      background-color:#eeeeee;
+      height:500px;
+      width:400px;
+      float:left;
+      padding:5px;
+    }
+    #section {
+      width:350px;
+      float:left;
+      padding:10px;
+    }
+    #footer {
+      background-color:black;
+      color:white;
+      clear:both;
+      text-align:center;
+      padding:5px;
+    }
+  </style>
 </head>
 <body>
 
-<div id="header">
-<h1>eventFindr</h1>
-</div>
+  <div id="header">
+    <h1>eventFindr</h1>
+  </div>
 
-<div id="nav" >
-List<br>
-<ul> 
-Events near you:
-	<div id="list"> </div>
-</ul> 
+  <div id="nav" >
+    List<br>
+    <ul>
+      Events near you:
+      <div id="list"> </div>
+    </ul>
 
 
 
-</div>
+  </div>
 
-<div id="section">
-<p>Map goes here</p>
+  <div id="section">
+    <p>Map goes here</p>
     <div id="map"></div>
-</div>
-
-
-    <style>
-      #map {
-        width: 500px;
-        height: 400px;
-      }
-    </style>
-    <script>
-      function initMap() {
-        var mapDiv = document.getElementById('map');
-        var map = new google.maps.Map(mapDiv, {
-          center: {lat: 33.749, lng: -84.388},
-          zoom: 11
-        });
-
-        var beaches = [
-  ['Bondi Beach', 33.760, -84.274856, 4],
-  ['Coogee Beach', 33.923036, -84.259052, 5],
-  ['Cronulla Beach', 34.028249, -84.157507, 3],
-  ['Manly Beach', 33.80010128657071, -84.28747820854187, 2],
-  ['Maroubra Beach', 33.950198, -84.259302, 1]
-];
-setMarkers(map);
-function setMarkers(map) {
-  // Adds markers to the map.
-
-  // Marker sizes are expressed as a Size of X,Y where the origin of the image
-  // (0,0) is located in the top left of the image.
-
-  // Origins, anchor positions and coordinates of the marker increase in the X
-  // direction to the right and in the Y direction down.
-  var image = {
-    url: 'http://labs.google.com/ridefinder/images/mm_20_red.png',
-    // This marker is 20 pixels wide by 32 pixels high.
-    size: new google.maps.Size(20, 32),
-    // The origin for this image is (0, 0).
-    origin: new google.maps.Point(0, 0),
-    // The anchor for this image is the base of the flagpole at (0, 32).
-    anchor: new google.maps.Point(0, 32)
-  };
-  // Shapes define the clickable region of the icon. The type defines an HTML
-  // <area> element 'poly' which traces out a polygon as a series of X,Y points.
-  // The final coordinate closes the poly by connecting to the first coordinate.
-  var shape = {
-    coords: [1, 1, 1, 20, 18, 20, 18, 1],
-    type: 'poly'
-  };
-  for (var i = 0; i < beaches.length; i++) {
-    var beach = beaches[i];
-    var marker = new google.maps.Marker({
-      position: {lat: beach[1], lng: beach[2]},
-      map: map,
-      icon: image,
-      shape: shape,
-      title: beach[0],
-      zIndex: beach[3]
-    });
-  }
-}
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
-        async defer></script>
-
-	
-
-	<script type="text/javascript">
-var options = [
-        set0 = ['Option 1','Option 2'],
-        set1 = ['First Option','Second Option','Third Option']
-    ];
-
-function makeUL(array) {
-    // Create the list element:
-    var list = document.createElement('ul');
-
-    for(var i = 0; i < array.length; i++) {
-        // Create the list item:
-        var item = document.createElement('li');
-
-        // Set its contents:
-        item.appendChild(document.createTextNode(array[i]));
-
-        // Add it to the list:
-        list.appendChild(item);
+    <div>
+    <button onclick="Login()">Login with Facebook</button>
+    <button onclick="test()">Test</button>
+    <div>
+  <style>
+    #map {
+      width: 500px;
+      height: 400px;
     }
+  </style>
+  <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '1749626521937958',
+        xfbml      : true,
+        version    : 'v2.5'
+      });
+    };
 
-    // Finally, return the constructed list:
-    return list;
-} 
-  </body>
+    (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+  </script>
+  <script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+  </div>
+</body>
 </html>
