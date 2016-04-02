@@ -2,6 +2,8 @@
 <html>
 
 <head>
+
+
 <style>
 #header {
     background-color:#3b5998;
@@ -38,22 +40,34 @@
 <h1>eventFindr</h1>
 </div>
 
-<div id="nav" >
+
+
+
+<div  id="nav" style="width:400px;height:500px;line-height:3em;overflow:auto;padding:5px;">
+One small line of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dictum, leo in posuere dignissim, eros lorem hendrerit neque, non maximus purus justo in mi. Sed aliquam malesuada lobortis. Vestibulum semper mattis libero sed sollicitudin. Proin id lorem ac arcu hendrerit mattis ac vitae magna. Ut quis mi lorem. Mauris sagittis non diam vitae cursus. Aenean dapibus vel enim non consectetur. Nam interdum risus dui, quis efficitur purus fermentum quis. Fusce convallis aliquet ultricies. Aliquam erat volutpat.
+
+Etiam viverra neque in nibh porttitor sodales. Mauris ac blandit magna, vitae suscipit massa. Pellentesque non viverra velit, sit amet feugiat nisl. Nullam eu blandit augue. Nunc vitae luctus mauris, non rhoncus nisl. Etiam id interdum metus, quis pulvinar eros. Nulla tempus dui mauris, vitae convallis ligula cursus in. Praesent nulla quam, pretium ac cursus ac, commodo vitae orci.
+
+Cras vel pellentesque ante. Vestibulum sit amet mattis augue. Maecenas dignissim lacinia nunc, vitae convallis nulla gravida et. Nullam eget sem id magna sollicitudin semper. Vestibulum augue lectus, lobortis quis dolor eu, lobortis rhoncus dui. Morbi fringilla neque sed purus tempus, sed feugiat mi porta. Quisque lacinia at lacus posuere gravida. Maecenas urna risus, tincidunt vel massa ac, gravida vehicula metus. Vivamus quis dolor sed lectus luctus dictum.
+
+In mollis varius volutpat. Suspendisse nulla eros, dictum eget volutpat vitae, faucibus ac tortor. Integer in est et nisi lacinia hendrerit. Duis scelerisque neque at ligula convallis fermentum. Proin nisl justo, rhoncus sit amet nibh ut, scelerisque convallis purus. Vestibulum nec euismod justo. In luctus auctor auctor. Nulla pharetra, leo a vestibulum congue, leo lorem imperdiet diam, non sagittis lectus nulla eget metus. Maecenas aliquet ex mauris. Donec mattis, nulla ac molestie iaculis, ex augue lobortis nibh, in gravida justo velit nec ligula. Praesent lectus nisi, aliquam at fringilla sed, dictum vitae turpis. Nullam nec libero et libero placerat viverra. Phasellus non justo quis ipsum finibus ornare. Sed luctus vitae risus vitae pharetra.
+
+Sed lobortis lobortis velit vitae lobortis. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur euismod semper tellus in congue. Nunc dictum nibh quam, et pharetra lectus tempus a. Suspendisse potenti. Vivamus metus lorem, suscipit quis est non, luctus semper elit. Quisque placerat purus at tempor imperdiet. Aenean viverra felis in dolor pretium, condimentum varius erat imperdiet. Donec id malesuada nisl, non efficitur nisi. 
 List<br>
-<ul> 
-Events near you:
+
+Events near you: <br>
+<li>howdy do</li>
 	<div id="list"> </div>
-</ul> 
-
-
-
 </div>
+
+
+
 
 <div id="section">
 <p>Map goes here</p>
     <div id="map"></div>
 </div>
-
+</div>
 
     <style>
       #map {
@@ -120,7 +134,7 @@ function setMarkers(map) {
 
 	
 
-	<script type="text/javascript">
+	<script >
 var options = [
         set0 = ['Option 1','Option 2'],
         set1 = ['First Option','Second Option','Third Option']
@@ -140,9 +154,13 @@ function makeUL(array) {
         // Add it to the list:
         list.appendChild(item);
     }
-
+    
     // Finally, return the constructed list:
     return list;
 } 
+	</script>
+
+
+
   </body>
 </html>
