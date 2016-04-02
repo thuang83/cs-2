@@ -68,6 +68,14 @@ Events near you:
           center: {lat: 33.749, lng: -84.388},
           zoom: 11
         });
+
+        var myLatLng = {lat: 33.749, lng: -84.388};
+
+        var marker = new google.maps.Marker({
+    	position: myLatLng,
+    	map: map,
+    	title: 'Hello World!'
+  		});
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
