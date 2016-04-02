@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:5px;
+    width:400px;
+    float:left;
+    padding:5px;        
+}
+#section {
+    width:350px;
+    float:left;
+    padding:10px;    
+}
+#footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+   padding:5px;    
+}
+</style>
+</head>
+<body>
+
+<div id="header">
+<h1>eventFindr</h1>
+</div>
+
+<div id="nav">
+<h3> search bar </h3>
+List<br>
+<ul> 
+listy listy 
+</ul> 
+
+
+</div>
+
+<div id="section">
+<p>Map goes here</p>
+    <div id="map"></div>
+</div>
+
+
+    <style>
+      #map {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script>
+      function initMap() {
+        var mapDiv = document.getElementById('map');
+        var map = new google.maps.Map(mapDiv, {
+          center: {lat: 44.540, lng: -78.546},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"
+        async defer></script>
+  </body>
+</html>
