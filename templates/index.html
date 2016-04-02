@@ -12,7 +12,7 @@
 <script>
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '870814606380271',
+      appId      : '1749626521937958',
       xfbml      : true,
       version    : 'v2.5'
     });
@@ -25,9 +25,35 @@
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
+
+  function Login() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+         console.log('Welcome!  Fetching your information.... ');
+         FB.api('/me', function(response) {
+           console.log('Good to see you, ' + response.name + '.');
+         });
+        } else {
+         console.log('User cancelled login or did not fully authorize.');
+        }
+    },{scope: 'user_events'});
+}
+
+ function test() {
+  FB.api(
+    "/me/events",
+    function (response) {
+      if (response && !response.error) {
+        for (var i = response.data.length - 1; i >= 0; i--) {
+          console.log(response.data[i]);
+        };
+      }
+    }
+  );
+ }
+
 </script>
-<div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
-what
-</div>
+<button onclick="Login()">Login with Facebook</button>
+<button onclick="test()">Test</button>
 </body>
 </html>
