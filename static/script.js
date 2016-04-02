@@ -10,7 +10,13 @@ function initMap() {
 }
 
 function makeMarkers(locs) {
-
+  var locs = [
+    ['Bondi Beach', 33.760, -84.274856, 4],
+    ['Coogee Beach', 33.923036, -84.259052, 5],
+    ['Cronulla Beach', 34.028249, -84.157507, 3],
+    ['Manly Beach', 33.80010128657071, -84.28747820854187, 2],
+    ['Maroubra Beach', 33.950198, -84.259302, 1]
+  ];
   setMarkers(map);
 
   function setMarkers(map) {
@@ -68,36 +74,20 @@ function Login() {
     scope: 'user_events'
   });
 }
-var test2 = 1;
+
 function test() {
   FB.api(
     "/me/events",
     function(response) {
       if (response && !response.error) {
-        console.log(response.data);
-        test2 = response.data;
         parseData(response.data);
       }
     }
   );
 }
 function parseData(data) {
-  var gatheringList = [];
-  for (var i = data.length - 1; i >= 0; i--) {
-    if (data[i].hasOwnProperty('place')) {
-      if (data[i].place.hasOwnProperty('location')){
-        if (data[i].place.location.hasOwnProperty('latitude') && data[i].place.location.hasOwnProperty('longitude')){
-           gathering = data[i];
-           gatheringName = gathering.name;
-           latitude = gathering.place.location.latitude;
-           longitude = gathering.place.location.longitude;
-           identification = gathering.id; //can change to url
-           var addRow = [gatheringName, latitude, longitude, identification];
-           console.log(addRow);
-           gatheringList.push(addRow);
-        }
-      }
-    }
-  }
-  makeMarkers(gatheringList);
+
+
+
+  makeMarkers(data);
 }
