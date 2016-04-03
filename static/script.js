@@ -69,7 +69,7 @@ function Login() {
   });
 }
 var test2 = 1;
-function test() {
+function getData() {
   FB.api(
     "/me/events?since=" + (Math.floor(new Date().getTime() / 1000)),
     function(response) {

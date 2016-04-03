@@ -75,55 +75,15 @@
     <div  class="col-md-4">
     <div class = "center-buttons">
         <button onclick="Login()" class = "btn" style = "background-color:#3b5998; color: white; border-radius: 0px;">Login with Facebook</button>
-        <button onclick="test()" class = "btn" style = "background-color:#3b5998; color: white; border-radius: 0px;">Get My Events!   </button>
+        <button onclick="getData()" class = "btn" style = "background-color:#3b5998; color: white; border-radius: 0px;">Get My Events!   </button>
     </div>
-      <div id="nav" style="height:700px;line-height:3em;overflow:auto;padding:5px;">
+      <div id="nav" class="no-events" style="height:700px;line-height:3em;overflow:auto;padding:5px;">
       <table class="table table-striped">
+      {% for c in range(20) %}
       <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
       </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
-      <tr>
-        <td> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
-      </tr>
+      {% endfor %}
       </table>
       </div>
     </div>
