@@ -100,7 +100,8 @@ function parseData(data) {
            var addRow = [gatheringName, latitude, longitude, identification];
            console.log(addRow);
            gatheringList.push(addRow);
-           var tableRow = $("<tr></tr>").append($("<td style = 'width: 450px;'></td>").text(gatheringName + " at " + data[i].place.name));
+           var url = "http://www.facebook.com/" + gathering.id;
+           var tableRow = $("<tr></tr>").append("<td style = 'width: 450px;'><a target = '_blank' href ='" + url +"'>" + gatheringName + " at " + data[i].place.name + "</a></td>");
            table.append(tableRow);
         }
       }
