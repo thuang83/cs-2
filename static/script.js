@@ -83,8 +83,10 @@ function getData() {
     }
   );
 }
+
 function parseData(data) {
   var gatheringList = [];
+  var table = $('<table class="table table-striped"></table>');
   for (var i = data.length - 1; i >= 0; i--) {
     console.log(data[i]);
     if (data[i].hasOwnProperty('place')) {
@@ -98,9 +100,12 @@ function parseData(data) {
            var addRow = [gatheringName, latitude, longitude, identification];
            console.log(addRow);
            gatheringList.push(addRow);
+           var tableRow = $("<tr></tr>").append($("<td style = 'width: 450px;'></td>").text(gatheringName + " at " + data[i].place.name));
+           table.append(tableRow);
         }
       }
     }
   }
+  $('#event-table').html(table);
   makeMarkers(gatheringList);
 }
