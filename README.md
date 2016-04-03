@@ -1,7 +1,5 @@
 # EventFindr
 
-Answer these:
-
 1. What is your hack and why did you do it? What is its social impact?
 	Our hack, HOWDYdo, is a social event finder. It allows people to network and become more involved in their community. HOWDYdo lists upcoming Facebook events connected to the user and pins their locations on a map.   
 2. Explain the technical details of your hack.
