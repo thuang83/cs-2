@@ -71,12 +71,14 @@ function Login() {
 var test2 = 1;
 function test() {
   FB.api(
-    "/me/events",
+    "/me/events?since=" + (Math.floor(new Date().getTime() / 1000)),
     function(response) {
       if (response && !response.error) {
         console.log(response.data);
         test2 = response.data;
         parseData(response.data);
+      } else {
+        console.log(response);
       }
     }
   );
@@ -84,6 +86,7 @@ function test() {
 function parseData(data) {
   var gatheringList = [];
   for (var i = data.length - 1; i >= 0; i--) {
+    console.log(data[i]);
     if (data[i].hasOwnProperty('place')) {
       if (data[i].place.hasOwnProperty('location')){
         if (data[i].place.location.hasOwnProperty('latitude') && data[i].place.location.hasOwnProperty('longitude')){
